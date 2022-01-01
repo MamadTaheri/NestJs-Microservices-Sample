@@ -206,23 +206,6 @@ const NavList = styled.li`
     }
 `;
 
-const User = styled(NavList)`
-    a > img {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-    }
-
-    span {
-        display: flex;
-        align-items: center;
-    }
-`;
-
-const Work = styled(User)`
-    border-left: 1px solid rgba(0,0,0,0.08);
-`;
-
 const SignOut = styled.div`
     position: absolute;
     top: 45px;
@@ -235,5 +218,32 @@ const SignOut = styled.div`
     text-align: center;
     display: none;
 `;
+
+const User = styled(NavList)`
+    a > img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+    }
+
+    &:hover {
+        ${SignOut} {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+    }
+`;
+
+const Work = styled(User)`
+    border-left: 1px solid rgba(0,0,0,0.08);
+`;
+
+
 
 export default Header;
