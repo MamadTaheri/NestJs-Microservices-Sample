@@ -19,12 +19,54 @@ const Header = (props) => {
             </Search>
             <Nav>
                 <NavListWrap>
-                    <NavList>
+                    <NavList className="active">
                         <a>
                           <img src="/images/nav-home.svg" alt="nav-home" />
                           <span>Home</span>
                         </a>
                     </NavList>
+                    <NavList>
+                        <a>
+                          <img src="/images/nav-network.svg" alt="nav-network" />
+                          <span>My Network</span>
+                        </a>
+                    </NavList>
+                    <NavList>
+                        <a>
+                          <img src="/images/nav-jobs.svg" alt="nav-jobs" />
+                          <span>Jobs</span>
+                        </a>
+                    </NavList>
+                    <NavList>
+                        <a>
+                          <img src="/images/nav-messaging.svg" alt="nav-messaging" />
+                          <span>Messaging</span>
+                        </a>
+                    </NavList>
+                    <NavList>
+                        <a>
+                          <img src="/images/nav-notifications.svg" alt="nav-home" />
+                          <span>Notifications</span>
+                        </a>
+                    </NavList>
+                    <User>
+                        <a>
+                          <img src="/images/user.svg" alt="user" />
+                          <span>Me</span>
+                          <img src="/images/down-icon.svg" alt="down-icon" />
+                        </a>
+                        <SignOut>
+                            <a>Sign Out</a>
+                        </SignOut>
+                    </User>
+                    <Work>
+                        <a>
+                          <img src="/images/nav-work.svg" alt="nav-work" />
+                          <span>Work
+                            <img src="/images/down-icon.svg" alt="down-icon" />
+                          </span>
+                        </a>
+                    </Work>
                 </NavListWrap>
             </Nav>
             </Content>
@@ -35,7 +77,7 @@ const Header = (props) => {
 const Container = styled.div`
     background-color: white;
     border-bottom: 1px solid rgba(0,0,0,0.08);
-    padding: 10px 24px;
+    padding: 0 24px;
     position: fixed;
     top: 0;
     left: 0;
@@ -110,6 +152,20 @@ const NavListWrap = styled.ul`
     display: flex;
     flex-wrap: nowrap;
     list-style-type: none;
+
+    .active {
+        span:after {
+            content: '';
+            transform: scaleX(1);
+            border-bottom: 2px solid #fff;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: all 0.2s ease-in-out;
+            width: 100%;
+            border-color: rgba(0,0,0,0.9);
+        }
+    }
 `;
 
 const NavList = styled.li`
@@ -150,5 +206,34 @@ const NavList = styled.li`
     }
 `;
 
+const User = styled(NavList)`
+    a > img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+    }
+`;
+
+const Work = styled(User)`
+    border-left: 1px solid rgba(0,0,0,0.08);
+`;
+
+const SignOut = styled.div`
+    position: absolute;
+    top: 45px;
+    background-color: white;
+    border-radius: 0 0 5px 5px;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    transition-duration: 167ms;
+    text-align: center;
+    display: none;
+`;
 
 export default Header;
