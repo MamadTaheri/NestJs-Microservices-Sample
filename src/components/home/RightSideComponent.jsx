@@ -28,13 +28,20 @@ const RightSideComponent = (props) => {
                         </div>
                     </li>
                 </FeedList>
+                <Recommendation>
+                    View all recommendations
+                    <img src="/images/right-icon.svg" alt="right-icon" />
+                </Recommendation>
             </FollowCard>
+            <BannerCard>
+                <img src="/images/banner.jpg" alt="banner" />
+            </BannerCard>
         </Container>
     );
 }
 
 const Container = styled.div`
-    grid-area: Rightside;
+    grid-area: rightside;
 `;
 
 const FollowCard = styled.div`
@@ -97,6 +104,21 @@ const Avatar = styled.div`
     width: 48px;
     height: 48px;
     margin-right: 8px;
+`;
+
+const Recommendation = styled.a`
+    color: #0a66c2;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+`;
+
+const BannerCard = styled(FollowCard)`
+    img {
+        width: 100%;
+        height: 100%;
+
+    }
 `;
 
 export default RightSideComponent;
