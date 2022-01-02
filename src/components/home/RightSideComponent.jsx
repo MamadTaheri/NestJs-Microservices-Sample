@@ -114,10 +114,11 @@ const Recommendation = styled.a`
 `;
 
 const BannerCard = styled(FollowCard)`
+    box-shadow: none;
     img {
         width: 100%;
         height: 100%;
-
+        border-radius: 5px;
     }
 `;
 
