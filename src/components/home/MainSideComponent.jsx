@@ -43,6 +43,14 @@ const MainSideComponent = (props) => {
                             <img src="/images/ellipsis.svg" alt="ellipsis" />
                         </button>
                     </SharedActor>
+                    <Description>
+                        Description
+                    </Description>
+                    <Sharedimg>
+                        <a>
+                            <img src="/images/user.svg" alt="aaaaa" />
+                        </a>
+                    </Sharedimg>
                 </Article>
             </div>
         </Container>
@@ -182,6 +190,27 @@ const SharedActor = styled.div`
         &:hover {
             background-color: rgba(0,0,0,0.1);
         }
+    }
+`;
+
+const Description = styled.div`
+    padding: 0 16px;
+    overflow: hidden;
+    color: rgba(0,0,0,0.9);
+    font-size: 14px;
+    text-align: left;
+`;
+
+const Sharedimg = styled.div`
+    margin-top: 8px;
+    width: 100%;
+    display: block;
+    position: relative;
+    background-color: #f9fafb;
+    img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
     }
 `;
 
