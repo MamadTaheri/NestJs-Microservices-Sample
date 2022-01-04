@@ -46,11 +46,40 @@ const MainSideComponent = (props) => {
                     <Description>
                         Description
                     </Description>
-                    <Sharedimg>
+                    <SharedImg>
                         <a>
                             <img src="/images/user.svg" alt="aaaaa" />
                         </a>
-                    </Sharedimg>
+                    </SharedImg>
+                    <SocialCounts>
+                        <li>
+                            <button>
+                                <img src="/images/like.png" alt="like" />
+                                <img src="/images/celebrate.png" alt="celebrate" />
+                                <span>75</span>
+                            </button>
+                        </li>
+                        <li><a>2 comments</a></li>
+                    </SocialCounts>
+                    <SocialActions>
+                        <button>
+                            <img src="/images/btnlike.png" alt="btnlike" />
+                            <span>Like</span>
+                        </button>
+                        <button>
+                            <img src="/images/btncomment.png" alt="btncomment" />
+                            <span>Comments</span>
+                        </button>
+                        <button>
+                            <img src="/images/btnshare.png" alt="btnshare" />
+                            <span>Share</span>
+                        </button>
+                        <button>
+                            <img src="/images/btnsend.png" alt="btnsend" />
+                            <span>Send</span>
+                        </button>
+                    </SocialActions>
+
                 </Article>
             </div>
         </Container>
@@ -201,7 +230,7 @@ const Description = styled.div`
     text-align: left;
 `;
 
-const Sharedimg = styled.div`
+const SharedImg = styled.div`
     margin-top: 8px;
     width: 100%;
     display: block;
@@ -211,6 +240,54 @@ const Sharedimg = styled.div`
         object-fit: contain;
         width: 100%;
         height: 100%;
+    }
+`;
+
+const SocialCounts = styled.ul`
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    margin: 0 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid #e9e5df;
+    list-style: none;
+    li {
+        margin-right: 5px;
+        font-size: 12px;
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+`;
+
+const SocialActions = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    min-height: 40px;
+    padding: 4px 8px;
+    button {
+        display: inline-flex;
+        align-items: center;
+        padding-left: 8px;
+        color: #0a66c2;
+        img {
+            width: 40px;
+            height: 40px;
+        }
+        @media (min-width: 768px) {
+            span {
+                margin-left: 8px;
+            }
+        }
     }
 `;
 
