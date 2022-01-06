@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PostModal from "./PostModal";
 
 const MainSideComponent = (props) => {
     return (
@@ -79,9 +80,9 @@ const MainSideComponent = (props) => {
                             <span>Send</span>
                         </button>
                     </SocialActions>
-
                 </Article>
             </div>
+            <PostModal />
         </Container>
     );
 }
