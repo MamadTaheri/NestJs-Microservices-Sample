@@ -1,14 +1,32 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import PostModal from "./PostModal";
 
 const MainSideComponent = (props) => {
+    const [showModal, setShowModal]  = useState("close");
+    const handleClick = e => {
+        e.preventDefault();
+        if (e.target !== e.currentTarget) {
+            return;
+        }
+        switch (showModal) {
+            case "open":
+                setShowModal("close");
+                break;
+            case "close":
+                setShowModal("open");
+                break;
+           
+        }
+    }
+ 
     return (
         <Container>
             <ShareBox>
                 share
             <div>
                 <img src="/images/user.svg" alt="user" />
-                <button>Start a post</button>
+                <button onClick={handleClick}>Start a post</button>
             </div>
             <div>
                 <button>
@@ -82,7 +100,7 @@ const MainSideComponent = (props) => {
                     </SocialActions>
                 </Article>
             </div>
-            <PostModal />
+            <PostModal showModal={showModal} handleClick={handleClick} />
         </Container>
     );
 }
