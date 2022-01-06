@@ -16,6 +16,15 @@ export function signInApi(){
     };
 }
 
+export function signOutAPI(){
+    return (dispatch) => {
+        auth.signOut()
+            .then(() => {
+                dispatch(setUser(null));
+            }).catch((error) => alert(error.message));
+    }
+}
+
 export function getUserAuth() {
     return (dispatch) => {
         auth.onAuthStateChanged(async (user) => {
