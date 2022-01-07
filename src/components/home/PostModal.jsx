@@ -1,9 +1,14 @@
 import { useState } from "react";
+import ReactPlayer from "react-player";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
-const PostModal = ({ showModal, handleClick }) => {
+const PostModal = (props) => {
   const [editorText, setEditorText] = useState("");
   const [shareImage, setShareImage] = useState("");
+  const [videoLink, setVideoLink] = useState("");
+  const [assetArea, setAssetArea] = useState("");
+  console.log(props.user);
 
   const handleChange = e => {
       const image = e.target.files[0];
@@ -14,14 +19,22 @@ const PostModal = ({ showModal, handleClick }) => {
       setShareImage(image);
   }
 
+  const switchAssetArea = area => {
+    setShareImage("");
+    setVideoLink("");
+    setAssetArea(area);
+  }
+
   const reset = (e) => {
     setEditorText("");
-    handleClick(e);
+    setShareImage("");
+    setVideoLink("");
+    props.handleClick(e);
   };
 
   return (
     <>
-      { showModal === 'open' && 
+      { props.showModal === 'open' && 
         <Container>
           <Content>
             <Header>
@@ -32,8 +45,14 @@ const PostModal = ({ showModal, handleClick }) => {
             </Header>
             <SharedContent>
               <UserInfo>
-                <img src="images/user.svg" alt="user" />
-                <span>Name</span>
+                {
+                  props.user.photoURL ? (
+                    <img src={props.user.photoURL} alt="user" />
+                  )  : (
+                    <img src="images/user.svg" alt="user" />
+                  )
+                }
+                <span>{props.user.displayName}</span>
               </UserInfo>
               <Editor>
                 <textarea
@@ -42,6 +61,7 @@ const PostModal = ({ showModal, handleClick }) => {
                   placeholder="What do you want to talk about ?"
                   autoFocus={true}
                  />
+                 { assetArea === 'image' ?   
                  <UploadImage>
                      <input 
                         type="file" 
@@ -56,14 +76,32 @@ const PostModal = ({ showModal, handleClick }) => {
                     </p>
                     {shareImage && <img src={URL.createObjectURL(shareImage)} />}
                  </UploadImage>
+                  :
+                  assetArea === 'media' &&
+                    <>
+                      <input 
+                        type="text" 
+                        placeholder="Please input a video link "
+                        value={videoLink}
+                        onChange={e => setVideoLink(e.target.value)}
+                        />
+                        {
+                          videoLink && 
+                          (<ReactPlayer 
+                            width={'100%'}
+                            url={videoLink}
+                            />)
+                        }
+                    </>
+                 }
               </Editor>
             </SharedContent>
             <ShardCreation>
               <AttachAssets>
-                <AssetButton>
+                <AssetButton onClick={() => switchAssetArea("image")} >
                   <img src="images/photo.png" alt="photo" />
                 </AssetButton>
-                <AssetButton>
+                <AssetButton onClick={() => switchAssetArea("media")} >
                   <img src="images/video.png" alt="video" />
                 </AssetButton>
               </AttachAssets>
@@ -232,4 +270,12 @@ const UploadImage = styled.div`
     }
 `;
 
-export default PostModal;
+const mapStateToProps = state => {
+  return {
+    user: state.userState.user,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => ({})
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostModal);
