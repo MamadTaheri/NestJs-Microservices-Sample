@@ -2,13 +2,14 @@ import { useState } from "react";
 import ReactPlayer from "react-player";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import firebase from "firebase";
+import { postArticleAPI } from "../../actions";
 
 const PostModal = (props) => {
   const [editorText, setEditorText] = useState("");
   const [shareImage, setShareImage] = useState("");
   const [videoLink, setVideoLink] = useState("");
   const [assetArea, setAssetArea] = useState("");
-  console.log(props.user);
 
   const handleChange = e => {
       const image = e.target.files[0];
@@ -25,10 +26,29 @@ const PostModal = (props) => {
     setAssetArea(area);
   }
 
+  const postArticle = e => {
+    console.log('post melone')
+    e.preventDefault();
+    if(e.target !== e.currentTarget) {
+      console.log("cake")
+      return;
+    }
+    const payload = {
+      image: shareImage,
+      video: videoLink,
+      user: props.user,
+      description: editorText,
+      timestamp: firebase.firestore.Timestamp.now()
+    };
+    props.postArticle(payload);
+    reset(e);
+  }
+
   const reset = (e) => {
     setEditorText("");
     setShareImage("");
     setVideoLink("");
+    setAssetArea("");
     props.handleClick(e);
   };
 
@@ -111,7 +131,12 @@ const PostModal = (props) => {
                   Anyone
                 </AssetButton>
               </SharedComment>
-              <PostButton disabled={!editorText ? true : false}>Post</PostButton>
+              <PostButton 
+                disabled={!editorText ? true : false}
+                onClick={e => postArticle(e)}
+              >
+                  Post
+              </PostButton>
             </ShardCreation>
           </Content>
         </Container>
@@ -276,6 +301,8 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({})
+const mapDispatchToProps = (dispatch) => ({
+  postArticle: (payload) => dispatch(postArticleAPI(payload))
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(PostModal);
