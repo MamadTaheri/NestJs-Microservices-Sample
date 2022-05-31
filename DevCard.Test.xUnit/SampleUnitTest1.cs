@@ -11,7 +11,7 @@ namespace DevCard.Test.xUnit
             string x = "test";
 
             //Act
-            bool result = (x == "tesaaat");
+            bool result = (x == "test");
 
             //Assert 
             Assert.True(result);
