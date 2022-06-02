@@ -11,9 +11,18 @@ namespace DevCard.MVC.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult Contact()
         {
-            return View();
+            var model = new Contact();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult Contact(Contact contact)
+        {
+            Console.WriteLine(contact.ToString());
+            return Ok(contact);
         }
 
         public IActionResult Portfolio()
