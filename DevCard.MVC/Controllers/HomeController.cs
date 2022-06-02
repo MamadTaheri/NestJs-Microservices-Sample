@@ -19,10 +19,16 @@ namespace DevCard.MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Contact(Contact contact)
+        public IActionResult Contact(Contact model)
         {
-            Console.WriteLine(contact.ToString());
-            return Ok(contact);
+            if(!ModelState.IsValid)
+            {
+                ViewBag.error = "اطلاعات وارد شده صحیح نیست لطفا دوباره تلاش کنید";
+                return View(model);
+            }
+            
+            ViewBag.success = "پیغام شما با موفقیت ارسال شد";
+            return View();
         }
 
         public IActionResult Portfolio()

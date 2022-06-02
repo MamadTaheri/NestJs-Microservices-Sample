@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DevCard.MVC
 build_property.RootNamespace = DevCard.MVC
-build_property.ProjectDir = D:\projects\01-training\dotNet && C#\DevCard-DotNET6.0\DevCard.MVC\
+build_property.ProjectDir = d:\projects\01-training\dotNet && C#\DevCard-DotNET6.0\DevCard.MVC\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\projects\01-training\dotNet && C#\DevCard-DotNET6.0\DevCard.MVC
+build_property.MSBuildProjectDirectory = d:\projects\01-training\dotNet && C#\DevCard-DotNET6.0\DevCard.MVC
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Home/Components/LatestArticles/_LatestArticles.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Home/Components/LatestArticles/_LatestArticles.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21wb25lbnRzXExhdGVzdEFydGljbGVzXF9MYXRlc3RBcnRpY2xlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Home/Components/Projects/_Projects.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Home/Components/Projects/_Projects.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb21wb25lbnRzXFByb2plY3RzXF9Qcm9qZWN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Home/Contact.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Home/Index.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Home/Portfolio.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Home/Portfolio.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQb3J0Zm9saW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Shared/Error.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Shared/Footer.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Shared/Footer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZvb3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Shared/Header.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Shared/Header.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhlYWRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/_ViewImports.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/_ViewStart.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Shared/_Layout.cshtml]
+[d:/projects/01-training/dotNet && C\#/DevCard-DotNET6.0/DevCard.MVC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-jfnrvvbinz
