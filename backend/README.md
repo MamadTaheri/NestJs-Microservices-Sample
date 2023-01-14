@@ -2,3 +2,4 @@
 
     typeorm
     @nestjs/typeorm
+    pg
