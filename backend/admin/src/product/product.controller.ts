@@ -22,7 +22,11 @@ export class ProductController {
 
   @Get()
   async all() {
-    this.client.emit('hello', new Date())
+    // const payload = {
+    //   message: 'This is a new notification',
+    //   sent_at: new Date(),
+    // };
+    // this.client.emit('hello', payload);
     return await this.productService.all();
   }
 
@@ -33,7 +37,11 @@ export class ProductController {
 
   @Get(':id')
   async get(@Param('id', ParseIntPipe) id: number) {
-    return await this.productService.get(id);
+    const product = await this.productService.get(id);
+
+    this.client.emit('product_created', product);
+
+    return product;
   }
 
   @Put(':id')
@@ -41,11 +49,19 @@ export class ProductController {
     @Param('id') id: number,
     @Body() body: createOrUpdateProductDto,
   ) {
-    return await this.productService.update(id, body);
+    await this.productService.update(id, body);
+
+    const product = await  this.productService.get(id);
+
+    this.client.emit('product_updated', product);
+
+    return product;
   }
 
   @Delete(':id')
   async delete(@Param('id') id: number) {
-    return await this.productService.delete(id);
+    await this.productService.delete(id);
+
+    this.client.emit('product_deleted', id);
   }
 }
