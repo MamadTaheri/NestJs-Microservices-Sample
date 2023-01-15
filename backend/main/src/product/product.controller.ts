@@ -1,11 +1,15 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, Post } from "@nestjs/common";
 import { EventPattern } from '@nestjs/microservices';
 import { ProductService } from './product.service';
 import { ProductDto } from "./product.dto";
+import { HttpService } from "@nestjs/axios";
 
 @Controller('products')
 export class ProductController {
-  constructor(private readonly productService: ProductService) {}
+  constructor(
+    private readonly productService: ProductService,
+    private readonly httpService: HttpService
+  ) {}
 
   @Get()
   async all() {
@@ -32,6 +36,21 @@ export class ProductController {
     console.log(`RabbitMQ: new product received -> delete -> productId: ${id}`);
     await this.productService.deleteMirrorProduct(id);
     console.log('delete done');
+  }
+
+  @Post(':id/like')
+  async like(@Param('id') id: number){
+    const product = await this.productService.findOne(id);
+
+    this.httpService.post(`http://localhost:8000/api/products/${id}/like`).subscribe(
+      response => {
+        console.log(response);
+      }
+    )
+
+    return await this.productService.updateMirrorProduct(id, {
+      likes: product.likes + 1
+    });
   }
 
 }

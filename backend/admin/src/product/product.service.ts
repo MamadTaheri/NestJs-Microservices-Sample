@@ -31,12 +31,12 @@ export class ProductService {
     return queryResult;
   }
 
-  async update(id: number, data: createOrUpdateProductDto): Promise<any> {
+  async update(id: number, data: Partial<createOrUpdateProductDto>): Promise<any> {
     const queryResult = await this.productRepository.update(id, data);
 
     if (queryResult.affected) return 'Product Updated successfully';
 
-    return 'A Problem happend';
+    return 'A Problem happened';
   }
 
   async delete(id: number): Promise<any> {

@@ -9,7 +9,7 @@ import { ProductModule } from './product/product.module';
     MongooseModule.forRoot('mongodb://localhost:27017/Nest_MainDB', {
       autoCreate: true,
     }),
-    ProductModule,
+    ProductModule
   ],
   controllers: [AppController],
   providers: [AppService],

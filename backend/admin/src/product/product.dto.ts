@@ -5,4 +5,4 @@ export interface ProductDto {
   likes: number;
 }
 
-export type createOrUpdateProductDto = Omit<ProductDto, 'id' | 'likes'>;
+export type createOrUpdateProductDto = Omit<ProductDto, 'id'>;
