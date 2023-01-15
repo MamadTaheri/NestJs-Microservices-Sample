@@ -14,7 +14,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       password: '',
       database: 'Nest_AdminDB',
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
     }),
     ProductModule,
   ],
