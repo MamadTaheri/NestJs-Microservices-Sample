@@ -17,4 +17,16 @@ export class ProductService {
   async createMirrorProduct(data): Promise<Product>{
     return new this.productModel(data).save();
   }
+
+  async findOne(id: number): Promise<Product>{
+    return this.productModel.findOne({id})
+  }
+
+  async updateMirrorProduct(id: number, data: any): Promise<any>{
+    return this.productModel.findOneAndUpdate({id}, data);
+  }
+
+  async deleteMirrorProduct(id: number): Promise<any>{
+    return this.productModel.deleteOne({id})
+  }
 }
