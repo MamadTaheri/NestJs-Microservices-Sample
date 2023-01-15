@@ -35,10 +35,15 @@ export class ProductService {
     const queryResult = await this.productRepository.update(id, data);
 
     if (queryResult.affected) return 'Product Updated successfully';
+
     return 'A Problem happend';
   }
 
   async delete(id: number): Promise<any> {
-    return this.productRepository.delete(id);
+    const queryResult = await this.productRepository.delete(id);
+
+    if(!queryResult.affected) throw  new NotFoundException();
+
+    return queryResult;
   }
 }

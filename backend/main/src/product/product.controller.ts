@@ -1,6 +1,7 @@
 import { Controller, Get } from '@nestjs/common';
 import { EventPattern } from '@nestjs/microservices';
 import { ProductService } from './product.service';
+import { ProductDto } from "./product.dto";
 
 @Controller('products')
 export class ProductController {
@@ -11,8 +12,12 @@ export class ProductController {
     return this.productService.all();
   }
 
-  @EventPattern('hello')
-  async hello(data: string) {
-    console.log(data);
+  @EventPattern('product_created')
+  // note: Exceptionally, we will also save id because this dto is a mirror from another microservice
+  async createMirrorProduct(product: ProductDto) {
+    console.log(`new product received -> save -> productId: ${product.id}`);
+    await this.productService.createMirrorProduct(product)
   }
+
+
 }

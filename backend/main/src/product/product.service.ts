@@ -10,7 +10,11 @@ export class ProductService {
     private readonly productModel: Model<ProductDocument>,
   ) {}
 
-  async all() {
+  async all(): Promise<Product[]> {
     return this.productModel.find().exec();
+  }
+
+  async createMirrorProduct(data): Promise<Product>{
+    return new this.productModel(data).save();
   }
 }
