@@ -1,3 +1,4 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/MamadTaheri/NestJs-Microservices-Sample)
 ## DB Config for Typeorm
 
 `app.module.ts`
